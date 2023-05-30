@@ -14,11 +14,12 @@ public class ImageController {
         this.fileParserImp = fileParserImp;
     }
 
-    @GetMapping(value = "/{name}/{surname}/{\\w\\.\\w}")
+    @GetMapping(value = "/{name}/{surname}")
     public FileSystemResource gethttpImageLink(
             @PathVariable String name,
             @PathVariable String surname)
     {
+        System.out.println("#############################");
         return new FileSystemResource(this.fileParserImp.getImageLink(name,surname));
     }
 }
